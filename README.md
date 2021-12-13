@@ -2,17 +2,23 @@
 
 Doctor Assistant is a desktop application built using Electron to allow a doctor to manage his patients and patient records
 
-![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/02.png)
-![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/03.png)
-![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/04.png)
-![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/05.png)
-
 ### `Here how the doctor will use the app`
 
-- When the app load, the doctor will see previously created patient records
-- To add new patient records he clicks on "manage" from the menu then select "Add Patient"
-- He fill the from then he clicks on "Add" button, so the new patient will be created and added to the main menu
-- The doctor could filter his patient records by first name, last name, gender or disease description
+`clicks on Manage>add patient then fill the form with patient information`
+
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/02.png)
+
+`Main window will display patient list with the option to filter patients by First name, Last name gender and disease description`
+
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/03.png)
+
+`When he clicks on details button a window will be displayed to show patient details`
+
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/04.png)
+
+`When he clicks on delete button a confirmation window will be displayed to confirm patient deletion`
+
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/05.png)
 
 ### `Dependencies`
 
