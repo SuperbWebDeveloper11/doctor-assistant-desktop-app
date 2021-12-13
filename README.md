@@ -55,4 +55,5 @@ When he clicks on delete button a confirmation window will be displayed to confi
 - The **mainWindow** will listen on **patient:deleted** and loop throw **patients** list to create table rows for each patient
 
 `Filter patients workflow`
+
 **Note:** It was built with pure javascript to filter patients by First name, Last name, gender or description
