@@ -53,3 +53,6 @@ When he clicks on delete button a confirmation window will be displayed to confi
 - When the user clicks on **Yes delete it** the **deleteConfirmationWindow** will send an event called **delete:confirmation** along with patient **id**
 - Again Electron app will listen to **delete:confirmation**, take the patient **id**, find the patient instance, delete it, send **patient:deleted** event to the **mainWindow** along with patients list
 - The **mainWindow** will listen on **patient:deleted** and loop throw **patients** list to create table rows for each patient
+
+`Filter patients workflow`
+**Note:** It was built with pure javascript to filter patients by First name, Last name, gender or description
