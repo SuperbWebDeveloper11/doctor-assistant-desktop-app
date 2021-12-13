@@ -2,7 +2,10 @@
 
 Doctor Assistant is a desktop application built using Electron to allow a doctor to manage his patients and patient records
 
-![Screenshot]()
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/02.png)
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/03.png)
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/04.png)
+![Screenshot](https://github.com/pedrasfloki/doctor-assistant-desktop-app/blob/main/screenshots/05.png)
 
 ### `Here how the doctor will use the app`
 
