@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css-files/add-patient.css" />
+    <title>Add Patient</title>
+  </head>
+  <body>
+    <!-- window title -->
+    <h2 class="center-title">Add Patient</h2>
+    <!-- form to add new patient -->
+    <form id="add-patient-form">
+      <div class="box">
+        <input
+          type="text"
+          placeholder="First name"
+          name="firstname"
+          required
+          autofocus
+        />
+      </div>
+      <div class="box">
+        <input type="text" placeholder="Last name" name="lastname" required />
+      </div>
+      <div class="box">
+        <select name="gender" id="by-gender" required>
+          <option value=""></option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+      </div>
+      <div class="description-box">
+        <input
+          type="text"
+          placeholder="description"
+          name="description"
+          required
+        />
+      </div>
+      <br />
+      <button type="submit" class="submit-btn">Add</button>
+    </form>
+    <script>
+      const electron = require("electron");
+      const { ipcRenderer } = electron;
+      const addPatientForm = document.forms["add-patient-form"];
+
+      function addPatient(event) {
+        /**
+         * This function send the typed information to the electron app
+         */
+
+        event.preventDefault();
+
+        // grab the values from input fields
+        const firstname = addPatientForm["firstname"].value;
+        const lastname = addPatientForm["lastname"].value;
+        const gender = addPatientForm["gender"].value;
+        const description = addPatientForm["description"].value;
+
+        const patientInfo = { firstname, lastname, gender, description };
+
+        // send an event along with patient info (will be listened to by the app)
+        ipcRenderer.send("add:patient", patientInfo);
+      }
+      addPatientForm.addEventListener("submit", addPatient);
+    </script>
+  </body>
+</html>

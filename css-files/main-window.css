@@ -1,0 +1,103 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  background-color: #0a8f21;
+  color: white;
+}
+
+input:focus {
+  outline-color: white;
+}
+
+/* styling the title */
+h2.center-title {
+  text-align: center;
+  font-size: 2em;
+}
+
+/* styling the input fields used for filtering */
+div.box {
+  float: left;
+  width: 33.33%;
+}
+
+div.box input {
+  height: 2em;
+  width: 90%;
+  display: block;
+  /* margin: auto; */
+  padding-left: 10px;
+}
+
+div.box select {
+  display: block;
+  width: 50%;
+  height: 2.4em;
+}
+
+div.description-box {
+  clear: both;
+  padding-top: 20px;
+}
+
+div.description-box input {
+  width: 60%;
+  height: 2em;
+  padding-left: 10px;
+}
+
+/* styling the table used to display patients */
+table,
+td,
+th {
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+th {
+  height: 60px;
+  background-color: rgb(0, 28, 105);
+  font-size: large;
+}
+
+td {
+  height: 50px;
+  text-align: center;
+}
+
+/* styling the delete button */
+
+td button.delete-patient {
+  border: 2px solid rgb(0, 28, 105);
+  border-radius: 7px;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgb(175, 8, 8);
+  color: white;
+  padding: 10px;
+}
+
+td button.delete-patient:hover {
+  cursor: pointer;
+}
+
+/* styling the see-details button */
+
+td button.see-details {
+  border: 2px solid rgb(0, 28, 105);
+  border-radius: 7px;
+  font-size: large;
+  font-weight: bold;
+  background-color: rgb(0, 28, 105);
+  color: white;
+  padding: 10px;
+}
+
+td button.see-details:hover {
+  cursor: pointer;
+}

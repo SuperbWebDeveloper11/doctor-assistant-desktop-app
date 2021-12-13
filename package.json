@@ -1,0 +1,15 @@
+{
+  "name": "doctor-assistant",
+  "version": "1.0.0",
+  "description": "desktop app to allow doctors to manage their patients",
+  "main": "main.js",
+  "scripts": {
+    "electron": "electron ."
+  },
+  "author": "front-end developer",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^16.0.2",
+    "lowdb": "^1.0.0"
+  }
+}

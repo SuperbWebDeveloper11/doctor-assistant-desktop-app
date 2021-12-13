@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
+        background-color: #0a8f21;
+        color: white;
+        margin-bottom: 40px;
+      }
+
+      /* styling the title */
+      h2.center-title {
+        text-align: center;
+        font-size: 2em;
+      }
+
+      div#patient-details b {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    </style>
+    <title>Patient Details</title>
+  </head>
+  <body>
+    <h2 class="center-title">Patient Details</h2>
+    <div id="patient-details"></div>
+  </body>
+  <script>
+    const electron = require("electron");
+    const { ipcRenderer } = electron;
+
+    ipcRenderer.on("display:details", (event, patientDetails) => {
+      // get a reference "div#patient-details"
+      let details = document.querySelector("div#patient-details");
+      // pull of patient details
+      let { firstname, lastname, gender, description } = patientDetails;
+      // create a p elements for each user detail
+      let fn = document.createElement("p");
+      fn.innerHTML = "<b>First name </b><br />" + firstname;
+      let ln = document.createElement("p");
+      ln.innerHTML = "<b>Last name </b><br />" + lastname;
+      let g = document.createElement("p");
+      g.innerHTML = "<b>Gender </b><br />" + gender;
+      let d = document.createElement("p");
+      d.innerHTML = "<b>Description </b><br />" + description;
+      // append created elements to the "div#patient-details"
+      details.appendChild(fn);
+      details.appendChild(ln);
+      details.appendChild(g);
+      details.appendChild(d);
+    });
+  </script>
+</html>

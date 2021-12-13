@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css-files/main-window.css" />
+    <title>Doctor Assistant</title>
+  </head>
+  <body>
+    <!-- window title -->
+    <h2 class="center-title">Doctor Assistant</h2>
+    <!-- input fields to filter patients -->
+    <div id="filter">
+      <div class="box">
+        <input
+          type="text"
+          name="firstname"
+          id="by-firstname"
+          placeholder="Search By name"
+          autofocus
+        />
+      </div>
+      <div class="box">
+        <input
+          type="text"
+          name="lastname"
+          id="by-lastname"
+          placeholder="Search By surname"
+        />
+      </div>
+      <div class="box">
+        <select name="gender" id="by-gender">
+          <option value=""></option>
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+      </div>
+      <div class="description-box">
+        <input
+          type="text"
+          name="description"
+          id="by-description"
+          placeholder="Search By disease description"
+        />
+      </div>
+    </div>
+    <br />
+    <input
+      type="hidden"
+      name="description"
+      value="hidden input can hold a value"
+      id="description"
+    />
+    <br />
+    <!-- table shown patients list -->
+    <table id="patients-table">
+      <thead>
+        <tr>
+          <th>first name</th>
+          <th>last name</th>
+          <th>gender</th>
+          <th>details</th>
+          <th>delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- patients info will be displayed here -->
+      </tbody>
+    </table>
+    <script src="../js-files/main-window.js"></script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-sizing: border-box;
+        background-color: #0a8f21;
+        color: white;
+      }
+
+      /* styling the title */
+      h2.center-title {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 2em;
+        margin-bottom: 40px;
+      }
+
+      div#patient-details b {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      button#delete-confirmation {
+        border: 2px solid red;
+        border-radius: 7px;
+        font-size: large;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: red;
+        color: white;
+      }
+
+      button#delete-confirmation {
+        cursor: pointer;
+      }
+    </style>
+    <title>Patient Details</title>
+  </head>
+  <body>
+    <h2 class="center-title">Are you sure you want to delete patient</h2>
+    <div id="patient-details"></div>
+    <button id="delete-confirmation">Yes delete it</button>
+  </body>
+  <script>
+    const electron = require("electron");
+    const { ipcRenderer } = electron;
+    let details = document.querySelector("div#patient-details");
+    let deleteBtn = document.querySelector("button#delete-confirmation");
+
+    ipcRenderer.on("display:details", (event, patientDetails) => {
+      // pull of patient details
+      let { firstname, lastname, gender, description } = patientDetails;
+
+      // create a p elements for each user detail
+      let fn = document.createElement("p");
+      fn.innerHTML = "<b>First name </b><br />" + firstname;
+      let ln = document.createElement("p");
+      ln.innerHTML = "<b>Last name </b><br />" + lastname;
+      let g = document.createElement("p");
+      g.innerHTML = "<b>Gender </b><br />" + gender;
+      let d = document.createElement("p");
+      d.innerHTML = "<b>Description </b><br />" + description;
+
+      // append created elements to the "div#patient-details"
+      details.appendChild(fn);
+      details.appendChild(ln);
+      details.appendChild(g);
+      details.appendChild(d);
+      // confirm patient deletion
+      deleteBtn.addEventListener("click", (event) => {
+        ipcRenderer.send("delete:confirmation", patientDetails.id);
+        console.log("delete confirmation");
+      });
+    });
+  </script>
+</html>
